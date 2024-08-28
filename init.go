@@ -6,7 +6,7 @@ import (
 	"github.com/bwmarrin/snowflake"
 )
 
-func Init() *snowflake.Node {
+func Init1() *snowflake.Node {
 	// Create a new Node with a Node number of 1
 	node, err := snowflake.NewNode(1)
 	if err != nil {
@@ -29,6 +29,21 @@ func Init() *snowflake.Node {
 
 	// Print out the ID's sequence number
 	fmt.Printf("ID Step  : %d\n", id.Step())
+
+	fmt.Println("node's time epoch", snowflake.Epoch)
+
+	return node
+}
+
+func Init2(epoch int64) *snowflake.Node {
+	snowflake.Epoch = epoch
+	// Create a new Node with a Node number of 1
+	node, err := snowflake.NewNode(1)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println("node's time epoch", snowflake.Epoch)
 
 	return node
 }
