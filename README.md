@@ -1,6 +1,6 @@
 # Snowflake
 ## Description
-There is a 64-bit integer coposed of 3 parts
+There is a 64-bit integer coposed of 4 parts
 1. Unused(1 bit)
 2. Timestamp (41 bits)
 3. Machine ID (10 bits)
